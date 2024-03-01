@@ -24,7 +24,7 @@ export class RegisterComponent {
     if (this.registerData.valid) {
       this.userSrv.signup(this.registerData.value).subscribe(
         (res) => {
-          this.router.navigate(['']);
+          this.router.navigate(['/login']);
         },
         (error) => {
           console.error('Error registering user:', error);

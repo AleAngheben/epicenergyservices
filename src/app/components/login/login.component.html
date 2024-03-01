@@ -1,5 +1,5 @@
 <div class="main">
-  <form>
+  <form [formGroup]="loginData" (ngSubmit)="login()">
     <input
       type="email"
       name="email"

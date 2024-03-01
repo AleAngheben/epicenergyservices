@@ -4,6 +4,7 @@ export interface AuthData {
   lastName: string | null;
   email: string | null;
   password: string | null;
+  id: number | null;
 }
 
 export interface lsAuth {
