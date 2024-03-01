@@ -1,0 +1,28 @@
+nav {
+  height: 4rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    57deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(48, 48, 48, 1) 17%,
+    rgba(80, 80, 80, 1) 100%
+  );
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+img {
+  height: 4rem;
+  padding: 0.5rem;
+}
+ul {
+  color: white;
+  padding: 0;
+}
+li,
+a {
+  display: inline-block;
+  margin: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
