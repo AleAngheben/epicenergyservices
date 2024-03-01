@@ -9,7 +9,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { UserComponent } from './components/user/user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ClientregisterComponent } from './components/clientregister/clientregister.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +19,16 @@ import { ClientregisterComponent } from './components/clientregister/clientregis
     RegisterComponent,
     UserComponent,
     NavbarComponent,
-    ClientregisterComponent
+    ClientregisterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
