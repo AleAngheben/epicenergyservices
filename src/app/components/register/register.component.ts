@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from 'src/app/services/user-service.service';
-import { RouterModule, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthData } from 'src/app/interfaces/User';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -11,25 +11,39 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegisterComponent {
   registerData = new FormGroup({
-    name: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    username: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+    username: new FormControl('', Validators.required),
   });
 
   constructor(private router: Router, private userSrv: UserServiceService) {}
 
   signup() {
-    if (this.registerData) {
-      this.userSrv.signup(this.registerData.value).subscribe((res) => {
-        if (typeof res === 'string') {
-        } else {
+    if (this.registerData.valid) {
+      this.userSrv.signup(this.registerData.value).subscribe(
+        (res) => {
           this.router.navigate(['']);
+        },
+        (error) => {
+          console.error('Error registering user:', error);
         }
-      });
-    } else alert('Form is invalid');
+      );
+    } else {
+      console.error('Form is invalid');
+    }
   }
+  // signup() {
+  //   if (this.registerData) {
+  //     this.userSrv.signup(this.registerData.value).subscribe((res) => {
+  //       if (typeof res === 'string') {
+  //       } else {
+  //         this.router.navigate(['']);
+  //       }
+  //     });
+  //   } else alert('Form is invalid');
+  //}
 
   //   this.form = this.fb.group({
   //     name: this.fb.control(null, [Validators.required]),
