@@ -34,46 +34,4 @@ export class RegisterComponent {
       console.error('Form is invalid');
     }
   }
-  // signup() {
-  //   if (this.registerData) {
-  //     this.userSrv.signup(this.registerData.value).subscribe((res) => {
-  //       if (typeof res === 'string') {
-  //       } else {
-  //         this.router.navigate(['']);
-  //       }
-  //     });
-  //   } else alert('Form is invalid');
-  //}
-
-  //   this.form = this.fb.group({
-  //     name: this.fb.control(null, [Validators.required]),
-  //     lastName: this.fb.control(null, [Validators.required]),
-  //     username: this.fb.control(null, [Validators.required]),
-  //     email: this.fb.control(null, [Validators.required, Validators.email]),
-  //     password: this.fb.control(null, [
-  //       Validators.required,
-  //       Validators.maxLength(8),
-  //     ]),
-  //   });
-  // }
-
-  // geterrorsC(name: string, error: string) {
-  //   return this.form.get(name)?.errors![error];
-  // }
-
-  // getFormC(nome: string) {
-  //   return this.form.get(nome);
-  // }
-
-  // signUp() {
-  //   console.log(this.registerData.value);
-  //   try {
-  //     this.userSrv.register(this.registerData.value).subscribe();
-  //     this.router.navigate(['/login']);
-  //   } catch (error: any) {
-  //     console.log(error);
-  //     alert('Email già registrata');
-  //     this.router.navigate(['/register']);
-  //   }
-  // }
 }

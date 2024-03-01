@@ -9,5 +9,4 @@ export interface AuthData {
 
 export interface lsAuth {
   accessToken: string;
-  user: Partial<AuthData>;
 }

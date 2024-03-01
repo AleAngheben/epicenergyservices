@@ -1,19 +1,13 @@
 <div class="main">
-  <form [formGroup]="loginData" (ngSubmit)="login()">
-    <input
-      type="email"
-      name="email"
-      placeholder="email"
-      formControlName="email"
-      required
-    />
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <input type="email" name="email" placeholder="email" required ngModel />
     <input
       type="password"
       name="password"
       placeholder="password"
-      formControlName="password"
       required
+      ngModel
     />
-    <button>Login</button>
+    <button type="submit" [disabled]="form.invalid">Login</button>
   </form>
 </div>
